@@ -8,4 +8,4 @@ angular-phonecat-snapshots
 bower_components/
 old/
 docs/
-www/libs
+*/libs/
