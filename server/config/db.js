@@ -1,18 +1,27 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/abfact', function (err) {
-    if (err) throw err;
-});
+var dbConnect = {
+    config: {
+        dsn: "mongodb://localhost/abfact"
+    },
+    connect: function () {
+        var dsn = this.config.dsn;
 
-var usersSchema = mongoose.Schema({
-    id : Number,
-    nom: String,
-    prenom: String,
-    username: String,
-    password: String
-});
+        mongoose.connect(dsn, function (err) {
+            if (err) throw err;
+        });
+        var usersSchema = mongoose.Schema({
+            id : Number,
+            nom: String,
+            prenom: String,
+            username: String,
+            password: String
+        });
 
-var Users =mongoose.model('users', usersSchema);
+        var Users =mongoose.model('users', usersSchema);
 
-var db = mongoose.connection;
+        var db = mongoose.connection;
+    }
+};
 
+module.exports = dbConnect;

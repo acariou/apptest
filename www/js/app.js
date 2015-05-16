@@ -17,9 +17,9 @@ myApp.config(function($routeProvider, $httpProvider) {
             access: {
                 requiredLogin: true
             }
-        }).when('/page1', {
-          templateUrl: 'partials/page1.html',
-          controller: 'Page1Ctrl',
+        }).when('/qcms', {
+          templateUrl: 'partials/qcms.html',
+          controller: 'QcmsCtrl',
             access: {
                 requiredLogin: true
             }

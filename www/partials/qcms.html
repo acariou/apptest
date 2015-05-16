@@ -1,0 +1,13 @@
+<section class="container" ng-controller="QcmsCtrl">
+	<h1>{{ qts.param.titre }}</h1>
+	<h3>This is from {{ name }}</h3>
+	<p>Liste des QCMs actifs</p>
+	<ul ng-repeat="qcm in qts.qcms">
+		<li><a href="#/qcm/{{qcm.id}}">{{ qcm.title }}</a></li>
+	</ul>
+	<p class="lead"> Demo a simple directive
+		<code>&lt;print-this/></code>
+	</p>
+
+	<print-this></print-this>
+</section>
